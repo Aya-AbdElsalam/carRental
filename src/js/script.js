@@ -198,7 +198,6 @@ $(document).ready(() => {
       var sectionBottom = sectionTop + $(this).outerHeight();
       if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
         var id = $(this).attr("id");
-        console.log(id, $(this).attr("class"));
         $("nav ul li a").removeClass("active");
         $('nav ul li a[href="#' + id + '" ]').addClass("active");
       }

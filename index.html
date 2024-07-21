@@ -42,37 +42,40 @@
 
 <body class="relative w-[100vw] overflow-x-hidden">
     <!-- header -->
-    <nav class="w-[100vw] bg-white z-50 top-0">
-        <div class="py-5 flex justify-between container items-center">
-            <img src="https://i.ibb.co/k8jy7Gd/logo-red.webp" width="271" height="70" alt="Car Rental Logo"
-                class="max-[777px]:h-[34px] max-[777px]:w-[180px] logo">
-            <ul
-                class="flex gap-5 text-[14px] text-mainText font-bold max-[777px]:hidden max-[777px]:absolute   max-[777px]:bg-black max-[777px]:text-white max-[777px]:top-[97px] max-[777px]:w-full max-[777px]:flex-col max-[777px]:left-0">
-                <li><a href="#Home"
-                        class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Home</a></li>
-                <li><a href="#Services"
-                        class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Services</a></li>
-
-                <li><a href="#Locations"
-                        class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Locations</a></li>
-                <li><a href="#Contact"
-                        class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Contact</a></li>
-            </ul>
-            <img width="30" id="menu" height="30" class="min-[777px]:hidden"
-                src="https://img.icons8.com/ios-filled/50/menu--v1.png" alt="Menu Icon" aria-label="Menu" />
-        </div>
-    </nav>
+    <header>
+        <nav class="w-[100vw] bg-white z-50 top-0" role="navigation" aria-label="Main Navigation">
+            <div class="py-5 flex justify-between container items-center">
+                <img src="https://i.ibb.co/k8jy7Gd/logo-red.webp" width="271" height="70" alt="Car Rental Logo"
+                    class="max-[777px]:h-[34px] max-[777px]:w-[180px] logo">
+                <ul
+                    class="flex gap-5 text-[14px] text-mainText font-bold max-[777px]:hidden max-[777px]:absolute max-[777px]:bg-black max-[777px]:text-white max-[777px]:top-[97px] max-[777px]:w-full max-[777px]:flex-col max-[777px]:left-0">
+                    <li><a href="#Home"
+                            class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Home</a></li>
+                    <li><a href="#Services"
+                            class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Services</a>
+                    </li>
+                    <li><a href="#Locations"
+                            class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Locations</a>
+                    </li>
+                    <li><a href="#Contact"
+                            class="max-[777px]:hover:bg-mainColor max-[777px]:p-[20px] max-[777px]:block">Contact</a>
+                    </li>
+                </ul>
+                <img width="30" id="menu" height="30" class="min-[777px]:hidden"
+                    src="https://img.icons8.com/ios-filled/50/menu--v1.png" alt="Menu Icon" aria-label="Menu" />
+            </div>
+        </nav>
+    </header>
 
     <!-- banner -->
     <section class="min-h-[100vh] py-3 flex items-center justify-center" id="Home"
         style="background: linear-gradient(to bottom, #303131 0%, #4d4f4f 50%, #303131 100%);">
         <div class="container flex gap-5 justify-stretch items-stretch flex-wrap">
-            <form class="bg-white p-5 w-[400px] grow  flex flex-col gap-3 " id="reservationForm">
-                <label for="cars" class=" mb-2 text-mainText text-[20px] hidden">Choose a car:</label>
-                <select name="cars" id="cars" required
+            <form class="bg-white p-5 w-[400px] grow flex flex-col gap-3" id="reservationForm">
+                <label for="cars" class="mb-2 text-mainText text-[20px]">Choose a car:</label>
+                <select name="cars" id="cars" required aria-labelledby="carLabel"
                     class="z-40 relative selectCar border-mainText border p-3 cursor-pointer text-[20px] w-full">
-                    <option value="" disabled selected>Select a car</option>
-                    <!-- Add car options here -->
+
                 </select>
 
                 <!-- pickup location -->
@@ -81,9 +84,10 @@
                         <p class="w-[130px] bg-secondColor p-3 flex gap-2"><img width="20" height="20"
                                 src="https://img.icons8.com/ios-filled/50/marker.png" alt="Location Marker" />
                             Pick Up</p>
-                        <select required id="location" aria-label="Pick Up Location"
+                        <select required id="location" aria-labelledby="pickupLocationLabel"
                             class="z-40 w-[139px] relative selectCar focus:outline-0 cursor-pointer grow bg-white">
-                            <option value="">Select Location</option>
+                            <option value="" disabled selected>Select a car</option>
+                            </option>
                             <option value="Santa Monica - 2102 Lincoln Blvd">Santa Monica - 2102 Lincoln Blvd</option>
                             <option value="With Co-Ordinates - 5711 W Century Blvd">With Co-Ordinates - 5711 W Century
                                 Blvd</option>
@@ -130,7 +134,7 @@
                             <td class="p-3">Make</td>
                             <td class="p-3" id="make">Toyota</td>
                         </tr>
-                        <tr class="bg-mainColor/20">
+                        <tr class="bg-mainColor/10">
                             <td class="p-3">Model</td>
                             <td class="p-3" id="model">Toyota</td>
                         </tr>
@@ -138,7 +142,7 @@
                             <td class="p-3">Year</td>
                             <td class="p-3" id="year">2024</td>
                         </tr>
-                        <tr class="bg-mainColor/20">
+                        <tr class="bg-mainColor/10">
                             <td class="p-3">Color</td>
                             <td class="p-3" id="color">Red</td>
                         </tr>
@@ -146,7 +150,7 @@
                             <td class="p-3">Mileage</td>
                             <td class="p-3" id="mileage">15,000 km</td>
                         </tr>
-                        <tr class="bg-mainColor/20">
+                        <tr class="bg-mainColor/10">
                             <td class="p-3">Fuel Type</td>
                             <td class="p-3" id="fuelType">Petrol</td>
                         </tr>
@@ -154,7 +158,7 @@
                             <td class="p-3">Transmission</td>
                             <td class="p-3" id="transmission">Automatic</td>
                         </tr>
-                        <tr class="bg-mainColor/20">
+                        <tr class="bg-mainColor/10">
                             <td class="p-3">Engine</td>
                             <td class="p-3" id="engine">2.0L</td>
                         </tr>
@@ -162,7 +166,7 @@
                             <td class="p-3">Horsepower</td>
                             <td class="p-3" id="horsepower">150 HP</td>
                         </tr>
-                        <tr class="bg-mainColor/20">
+                        <tr class="bg-mainColor/10">
                             <td class="p-3">Features</td>
                             <td class="p-3" id="features">Air Conditioning, GPS, Bluetooth</td>
                         </tr>
@@ -170,10 +174,11 @@
                 </div>
             </form>
             <div class="overflow-hidden w-[450px] grow-[5] place-self-center" style="flex-grow: 5;">
-                <img src="" id="carIMG" alt="Selected Car Image " width="100%" height="auto" class="w-full " />
+                <img src="" id="carIMG" alt="Selected Car Image" width="100%" height="auto" class="w-full" />
             </div>
         </div>
     </section>
+
     <!-- Customer Services -->
     <section class="text-center my-[40px]" id="Services">
         <div class="container">
@@ -183,7 +188,7 @@
                 <div class="flex gap-5 flex-wrap">
                     <div class="bg-secondColor p-5 text-left w-[455px] grow" data-aos="fade-right">
                         <div class="flex items-center gap-3 text-[24px] mb-5">
-                            <p class="bg-mainColor font-bold text-white px-3">+</p>
+                            <p class="bg-mainColor font-bold text-white px-3" aria-hidden="true">+</p>
                             <p class="font-bold text-mainText">Special rates on car booking</p>
                         </div>
                         <p class="leading-relaxed">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy
@@ -192,7 +197,7 @@
                     </div>
                     <div class="bg-secondColor p-5 text-left w-[455px] grow" data-aos="fade-left">
                         <div class="flex items-center gap-3 text-[24px] mb-5">
-                            <p class="bg-mainColor font-bold text-white px-3">+</p>
+                            <p class="bg-mainColor font-bold text-white px-3" aria-hidden="true">+</p>
                             <p class="font-bold text-mainText">Mobile Phone Reservation</p>
                         </div>
                         <p class="leading-relaxed">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy
@@ -203,7 +208,7 @@
                 <div class="flex gap-5 flex-wrap">
                     <div class="bg-secondColor p-5 text-left w-[455px] grow" data-aos="fade-right">
                         <div class="flex items-center gap-3 text-[24px] mb-5">
-                            <p class="bg-mainColor font-bold text-white px-3">+</p>
+                            <p class="bg-mainColor font-bold text-white px-3" aria-hidden="true">+</p>
                             <p class="font-bold text-mainText">Unlimited Miles Car Rental</p>
                         </div>
                         <p class="leading-relaxed">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy
@@ -212,7 +217,7 @@
                     </div>
                     <div class="bg-secondColor p-5 text-left w-[455px] grow" data-aos="fade-left">
                         <div class="flex items-center gap-3 text-[24px] mb-5">
-                            <p class="bg-mainColor font-bold text-white px-3">+</p>
+                            <p class="bg-mainColor font-bold text-white px-3" aria-hidden="true">+</p>
                             <p class="font-bold text-mainText">One Way Car Rentals</p>
                         </div>
                         <p class="leading-relaxed">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed nonumy
@@ -233,73 +238,72 @@
                     <p class="text-[19px]">EXCLUSIVE ACCESS FOR OFFERS AND PROMOTIONS</p>
                 </div>
                 <div class="flex gap-3">
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <img width="65" height="65" src="./assets/linkedin.png"
                             class="p-3 hover:bg-blue-600 bg-mainText h-[65px] w-[65px] transition-all duration-2000"
-                            alt="LinkedIn">
+                            alt="LinkedIn Icon">
                     </a>
-                    <a href="https://plus.google.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://plus.google.com" target="_blank" rel="noopener noreferrer"
+                        aria-label="Google Plus">
                         <img width="65" height="65"
                             class="p-3 h-[65px] w-[65px] bg-mainText hover:bg-red-500 transition-all duration-2000"
-                            src="./assets/google-plus.png" alt="Google Plus">
+                            src="./assets/google-plus.png" alt="Google Plus Icon">
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                         <img class="p-3 h-[65px] w-[65px] bg-mainText hover:bg-blue-400 transition-all duration-2000"
-                            width="65" height="65" src="./assets/twitter.png" alt="Twitter">
+                            width="65" height="65" src="./assets/twitter.png" alt="Twitter Icon">
                     </a>
                 </div>
-                <form class="w-full flex emailForm" action="#" method="post">
+                <form class="w-full flex emailForm" action="#" method="post" aria-label="Newsletter Signup">
                     <input type="email" placeholder="Enter your email" class="w-full p-3 focus:outline-0 focus:border-0"
-                        required>
-                    <button type="submit" class="bg-white p-3 hover:text-mainColor">SEND</button>
+                        required aria-label="Email Address">
+                    <button type="submit" class="bg-white p-3 hover:text-mainColor"
+                        aria-label="Send Email">SEND</button>
                 </form>
             </div>
         </div>
     </section>
+
     <!-- Reviews -->
-    <section class="flex container justify-center items-center py-10 flex-col gap-4">
-        <img height="109px" class="h-[109px]" width="auto" alt="star"
+    <section class="flex container justify-center text-center items-center py-10 flex-col gap-4"
+        aria-labelledby="reviews-heading">
+        <h2 id="reviews-heading" class="sr-only">Customer Reviews</h2>
+        <img height="109px" class="h-[109px]" width="auto"
+            alt="Five golden stars representing excellent customer evaluation"
             src="./assets/five-golden-stars-client-excellent-evaluation-after-use-product-service-concept-by-3d-render.png" />
         <p id="review" class="text-mainText leading-[1.7] text-[24px]">This was my first time renting from car|rental.
-
         </p>
-        <p id="nameClient" class="text-mainColor font-bold text-[18px]">
-        </p>
-        <ul class="flex list-disc gap-3 text-[29px] cursor-pointer" id="bulletReview">
-            <li></li>
-            <li></li>
+        <p id="nameClient" class="text-mainColor font-bold text-[18px]" aria-label="Client's Name"></p>
+        <ul class="flex list-disc gap-3 text-[29px] cursor-pointer" id="bulletReview" role="list">
+            <li aria-label="Review Point 1"></li>
+            <li aria-label="Review Point 2"></li>
         </ul>
     </section>
-    <!-- map -->
-    <section class="h-[90vh] mt-10" id="Locations">
+
+    <!-- Map -->
+    <section class="h-[90vh] mt-10" id="Locations" aria-labelledby="locations-heading">
+        <h2 id="locations-heading" class="sr-only">Car Rental Locations</h2>
         <div id="carRentalSelect" class="p-5 top-10 bg-mainColor flex gap-5 container items-center relative after:absolute after:content-['']
-            after:border-[50px]   after:top-[100%]
-            after:left-[50%]">
-            <p class="text-white text-[35px] font-bold">Car Rental Locations
-            </p>
+        after:border-[50px] after:top-[100%] after:left-[50%]">
+            <p class="text-white text-[35px] font-bold">Car Rental Locations</p>
+            <label for="locationMap" class="sr-only">Select a car rental location</label>
             <select required id="locationMap" aria-label="Pick Up Location"
                 class="z-40 w-[139px] p-3 relative selectCar focus:outline-0 cursor-pointer grow">
-                <option value="">please select location
-                </option>
+                <option value="">Please select location</option>
                 <option value="Santa Monica - 2102 Lincoln Blvd">Santa Monica - 2102 Lincoln Blvd</option>
-                <option value="With Co-Ordinates - 5711 W Century Blvd">With Co-Ordinates - 5711 W Century
-                    Blvd</option>
-                <option value="Las Vegas - 6401 Centennial Center Blvd">Las Vegas - 6401 Centennial Center
-                    Blvd</option>
+                <option value="With Co-Ordinates - 5711 W Century Blvd">With Co-Ordinates - 5711 W Century Blvd</option>
+                <option value="Las Vegas - 6401 Centennial Center Blvd">Las Vegas - 6401 Centennial Center Blvd</option>
                 <option value="New York - 610 Warren St">New York - 610 Warren St</option>
                 <option value="Orlando - 2125 W Landstreet Rd">Orlando - 2125 W Landstreet Rd</option>
-                <option value="Washington - 50 Massachusetts Ave NE">Washington - 50 Massachusetts Ave NE
-                </option>
+                <option value="Washington - 50 Massachusetts Ave NE">Washington - 50 Massachusetts Ave NE</option>
                 <option value="Denver - 7800 E Tufts Ave">Denver - 7800 E Tufts Ave</option>
             </select>
-
         </div>
-        <div id="map" class="z-0 h-full">
-
-        </div>
+        <div id="map" class="z-0 h-full" role="region" aria-label="Map showing car rental locations"></div>
     </section>
+
     <!-- Meet Our Partners -->
-    <section class="bg-secondColor" id="Contact">
+    <section class="bg-secondColor" id="Contact" role="region" aria-labelledby="contactHeading">
         <div class="container py-20">
             <div id="MeetOurPartners">
             </div>
@@ -313,84 +317,102 @@
                 partners.
             </p>
             <div class="flex gap-10 justify-center sm:flex-nowrap flex-wrap">
-                <img src="./assets/partner1.webp" class="w-[130px] sm:grow" alt="Partner 1 logo" width="130"
+                <img src="./assets/partner1.webp" class="w-[130px] sm:grow"
+                    alt="Logo of Partner 1, an organization committed to environmental sustainability" width="130"
                     height="auto">
-                <img src="./assets/partner2.webp" class="w-[130px] sm:grow" alt="Partner 2 logo" width="130"
-                    height="auto">
-                <img src="./assets/partner3.webp" class="w-[130px] sm:grow" alt="Partner 3 logo" width="130"
-                    height="auto">
-                <img src="./assets/partner4.webp" class="w-[130px] sm:grow" alt="Partner 4 logo" width="130"
+                <img src="./assets/partner2.webp" class="w-[130px] sm:grow"
+                    alt="Logo of Partner 2, a leading innovator in clean energy solutions" width="130" height="auto">
+                <img src="./assets/partner3.webp" class="w-[130px] sm:grow"
+                    alt="Logo of Partner 3, a global leader in sustainable agriculture" width="130" height="auto">
+                <img src="./assets/partner4.webp" class="w-[130px] sm:grow"
+                    alt="Logo of Partner 4, an organization focused on advancing renewable technologies" width="130"
                     height="auto">
             </div>
         </div>
     </section>
 
+
     <!-- Contact Us -->
-    <section class="container my-20" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div id="ContactUs">
-        </div>
+    <section class="container my-20" data-aos="fade-up" data-aos-anchor-placement="top-bottom" role="region"
+        aria-labelledby="contactUsHeading">
+        <h2 id="contactUsHeading" class="sr-only">Contact Us</h2>
+        <div id="ContactUs"></div>
         <div class="flex gap-5 flex-wrap mt-20">
             <div class="text-[18px] text-mainText w-[350px]" style="flex-grow: 3;">
                 <div class="mb-5">
-                    <p>You have any questions or need additional information?</p>
+                    <p>If you have any questions or need additional information, please reach out to us.</p>
                     <p class="font-bold">
                         <span class="text-mainColor">Address:</span> Car|Rental / 3861 Sepulveda Blvd. / Culver City, CA
                         90230
                     </p>
                 </div>
+                <form class="flex flex-col gap-4 contactForm" action="/submit-contact-form" method="post"
+                    aria-labelledby="contactFormHeading">
+                    <h3 id="contactFormHeading" class="sr-only">Contact Form</h3>
+                    <label for="firstName" class="sr-only">First Name</label>
+                    <input placeholder="First Name" type="text" id="firstName"
+                        class="text-mainText font-bold bg-secondColor p-2 w-full" required aria-required="true">
 
-                <form class="flex flex-col gap-4 contactForm" action="/submit-contact-form" method="post">
-                    <input placeholder="First Name" type="text"
-                        class="text-mainText font-bold bg-secondColor p-2 w-full" required aria-label="First Name">
-                    <input placeholder="Last Name" type="text" class="text-mainText font-bold bg-secondColor p-2 w-full"
-                        required aria-label="Last Name">
-                    <input placeholder="Telephone" type="tel" class="text-mainText font-bold bg-secondColor p-2 w-full"
-                        required aria-label="Telephone">
-                    <input placeholder="Email" type="email" class="text-mainText font-bold bg-secondColor p-2 w-full"
-                        required aria-label="Email">
-                    <textarea placeholder="Message" required
-                        class="text-mainText font-bold bg-secondColor p-2 w-full h-[200px]"
-                        aria-label="Message"></textarea>
+                    <label for="lastName" class="sr-only">Last Name</label>
+                    <input placeholder="Last Name" type="text" id="lastName"
+                        class="text-mainText font-bold bg-secondColor p-2 w-full" required aria-required="true">
+
+                    <label for="telephone" class="sr-only">Telephone</label>
+                    <input placeholder="Telephone" type="tel" id="telephone"
+                        class="text-mainText font-bold bg-secondColor p-2 w-full" required aria-required="true">
+
+                    <label for="email" class="sr-only">Email</label>
+                    <input placeholder="Email" type="email" id="email"
+                        class="text-mainText font-bold bg-secondColor p-2 w-full" required aria-required="true">
+
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea placeholder="Message" id="message"
+                        class="text-mainText font-bold bg-secondColor p-2 w-full h-[200px]" required
+                        aria-required="true"></textarea>
+
                     <button class="bg-mainColor hover:bg-black p-3 text-white font-bold" type="submit">SEND</button>
                 </form>
             </div>
             <div class="grow w-[350px] text-mainText flex flex-col gap-3">
-                <p>Customer Center</p>
+                <h3 class="text-[24px] font-bold">Customer Center</h3>
                 <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
                     <img src="https://www.microsoft.com/en-us/dynamics-365/blog/wp-content/uploads/2016/07/249564_5F00_empower_2D00_customer_2D00_service_2D00_agents.jpg"
-                        alt="Mike Smith" width="78" height="78" class="w-[78px] h-[78px] border border-mainColor">
+                        alt="Customer Service Representative Mike Smith" width="78" height="78"
+                        class="w-[78px] h-[78px] border border-mainColor">
                     <div class="text-mainText">
                         <p class="text-[24px] font-bold">Mike Smith</p>
                         <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
-                        <p><span class="text-mainColor">Email:</span> connor@example.com</p>
+                        <p><span class="text-mainColor">Email:</span> mike.smith@example.com</p>
                     </div>
                 </div>
-                <p>Change or Cancel Reservation</p>
+                <h3 class="text-[24px] font-bold">Change or Cancel Reservation</h3>
                 <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
                     <img src="https://media.istockphoto.com/id/1371553731/photo/portrait-of-a-young-businessman-using-a-headset-in-a-modern-office.jpg?s=612x612&w=0&k=20&c=gfn9mVWijMJFNPRdzDNZExnvC6qBOkeeol9oJGpEfSM="
                         alt="Support Representative" width="78" height="78"
                         class="w-[78px] h-[78px] border border-mainColor">
                     <div class="text-mainText">
-                        <p class="text-[24px] font-bold">Mike Smith</p>
+                        <p class="text-[24px] font-bold">Support Representative</p>
                         <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
-                        <p><span class="text-mainColor">Email:</span> connor@example.com</p>
+                        <p><span class="text-mainColor">Email:</span> support@example.com</p>
                     </div>
                 </div>
                 <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
                     <img src="https://www.microsoft.com/en-us/dynamics-365/blog/wp-content/uploads/2016/07/249564_5F00_empower_2D00_customer_2D00_service_2D00_agents.jpg"
-                        alt="Jane Doe" width="78" height="78" class="w-[78px] h-[78px] border border-mainColor">
+                        alt="Customer Service Representative Jane Doe" width="78" height="78"
+                        class="w-[78px] h-[78px] border border-mainColor">
                     <div class="text-mainText">
                         <p class="text-[24px] font-bold">Jane Doe</p>
                         <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
-                        <p><span class="text-mainColor">Email:</span> connor@example.com</p>
+                        <p><span class="text-mainColor">Email:</span> jane.doe@example.com</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Footer -->
-    <footer class="bg-black text-white font-bold text-center py-5">
+    <footer class="bg-black text-white font-bold text-center py-5" role="contentinfo">
         <p>&copy; 2024 Car Rental. All Rights Reserved.</p>
     </footer>
 
@@ -513,19 +535,21 @@
     </div>
 
     <!-- Success Message -->
-    <div id="msg" class="hidden top-0 fixed h-[100vh] w-full  justify-center items-center z-[6000] ">
-        <div class=" text-center flex  bg-white shadow-lg p-10  gap-2 text-[24px] flex-col justify-center items-center"
-            aria-live="assertive">
+    <div id="msg" class="hidden top-0 fixed h-[100vh] w-full  justify-center items-center z-[6000] "
+        aria-live="assertive" role="alertdialog">
+        <div class=" text-center flex  bg-white shadow-lg p-10  gap-2 text-[24px] flex-col justify-center items-center">
             <img src="./assets/icons8-correct.gif" width="50" height="50" class="w-[50px] h-[50px]" alt="Success">
-            <p class="font-bold"></p>
+            <p class="font-bold" id="successMessage"></p>
         </div>
     </div>
-    <!-- scroll top -->
-    <div id="scrollToTopBtn" class="hidden cursor-pointer fixed bottom-5 p-3 bg-black/50 hover:bg-black right-3">
-        <img width="26" height="26" src="https://img.icons8.com/metro/26/collapse-arrow.png" class="invert"
-            alt="collapse-arrow" />
 
+    <!-- Scroll to Top Button -->
+    <div id="scrollToTopBtn" class="hidden cursor-pointer fixed bottom-5 p-3 bg-black/50 hover:bg-black right-3"
+        role="button" aria-label="Scroll to top">
+        <img width="26" height="26" src="https://img.icons8.com/metro/26/collapse-arrow.png" class="invert"
+            alt="Scroll to top arrow" />
     </div>
+
     <script src="./src/js/script.js" type="module"></script>
 </body>
 

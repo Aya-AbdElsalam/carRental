@@ -772,6 +772,10 @@ video {
   margin-bottom: 40px;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -2012,16 +2016,16 @@ video {
 
 .border-mainColor {
   --tw-border-opacity: 1;
-  border-color: rgb(198 19 52 / var(--tw-border-opacity));
+  border-color: rgb(153 13 39 / var(--tw-border-opacity));
 }
 
 .border-mainColor\/75 {
-  border-color: rgb(198 19 52 / 0.75);
+  border-color: rgb(153 13 39 / 0.75);
 }
 
 .border-mainText {
   --tw-border-opacity: 1;
-  border-color: rgb(113 109 110 / var(--tw-border-opacity));
+  border-color: rgb(64 64 64 / var(--tw-border-opacity));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
@@ -2044,25 +2048,29 @@ video {
 
 .bg-mainColor {
   --tw-bg-opacity: 1;
-  background-color: rgb(198 19 52 / var(--tw-bg-opacity));
+  background-color: rgb(153 13 39 / var(--tw-bg-opacity));
+}
+
+.bg-mainColor\/10 {
+  background-color: rgb(153 13 39 / 0.1);
 }
 
 .bg-mainColor\/20 {
-  background-color: rgb(198 19 52 / 0.2);
+  background-color: rgb(153 13 39 / 0.2);
 }
 
 .bg-mainColor\/75 {
-  background-color: rgb(198 19 52 / 0.75);
+  background-color: rgb(153 13 39 / 0.75);
 }
 
 .bg-mainText {
   --tw-bg-opacity: 1;
-  background-color: rgb(113 109 110 / var(--tw-bg-opacity));
+  background-color: rgb(64 64 64 / var(--tw-bg-opacity));
 }
 
 .bg-secondColor {
   --tw-bg-opacity: 1;
-  background-color: rgb(237 237 237 / var(--tw-bg-opacity));
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -2428,12 +2436,12 @@ video {
 
 .text-mainColor {
   --tw-text-opacity: 1;
-  color: rgb(198 19 52 / var(--tw-text-opacity));
+  color: rgb(153 13 39 / var(--tw-text-opacity));
 }
 
 .text-mainText {
   --tw-text-opacity: 1;
-  color: rgb(113 109 110 / var(--tw-text-opacity));
+  color: rgb(64 64 64 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -2889,7 +2897,7 @@ body {
 }
 
 #carRentalSelect::after {
-  border-color: #c61334 transparent transparent;
+  border-color: #990d27 transparent transparent;
 }
 
 #carDetails,
@@ -2982,7 +2990,7 @@ a.active {
 .after\:bg-mainColor::after {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
-  background-color: rgb(198 19 52 / var(--tw-bg-opacity));
+  background-color: rgb(153 13 39 / var(--tw-bg-opacity));
 }
 
 .after\:content-\[\'\'\]::after {
@@ -3016,7 +3024,7 @@ a.active {
 
 .hover\:text-mainColor:hover {
   --tw-text-opacity: 1;
-  color: rgb(198 19 52 / var(--tw-text-opacity));
+  color: rgb(153 13 39 / var(--tw-text-opacity));
 }
 
 .before\:hover\:text-center:hover::before {
@@ -3098,7 +3106,7 @@ a.active {
 
   .max-\[777px\]\:hover\:bg-mainColor:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(198 19 52 / var(--tw-bg-opacity));
+    background-color: rgb(153 13 39 / var(--tw-bg-opacity));
   }
 }
 
