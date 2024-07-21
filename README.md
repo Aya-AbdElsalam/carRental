@@ -8,5 +8,6 @@ This project is a dynamic and user-friendly car rental service application built
 
 # Tools
 - HTML
+- Tailwind CSS
 - jQuery
 - Aos
