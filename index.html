@@ -72,7 +72,7 @@
         style="background: linear-gradient(to bottom, #303131 0%, #4d4f4f 50%, #303131 100%);">
         <div class="container flex gap-5 justify-stretch items-stretch flex-wrap">
             <form class="bg-white p-5 w-[400px] grow flex flex-col gap-3" id="reservationForm">
-                <label for="cars" class="mb-2 text-mainText text-[20px]">Choose a car:</label>
+                <label for="cars" class="mb-2 text-mainText text-[20px] sr-only">Choose a car:</label>
                 <select name="cars" id="cars" required aria-labelledby="carLabel"
                     class="z-40 relative selectCar border-mainText border p-3 cursor-pointer text-[20px] w-full">
 
@@ -81,13 +81,14 @@
                 <!-- pickup location -->
                 <div class="relative z-40 w-full">
                     <div class="w-full border border-mainText flex gap-5 text-mainText">
-                        <p class="w-[130px] bg-secondColor p-3 flex gap-2"><img width="20" height="20"
-                                src="https://img.icons8.com/ios-filled/50/marker.png" alt="Location Marker" />
-                            Pick Up</p>
+                        <p id="pickupLocationLabel" class="w-[130px] bg-secondColor p-3 flex gap-2">
+                            <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/marker.png"
+                                alt="Location Marker" />
+                            Pick Up
+                        </p>
                         <select required id="location" aria-labelledby="pickupLocationLabel"
                             class="z-40 w-[139px] relative selectCar focus:outline-0 cursor-pointer grow bg-white">
                             <option value="" disabled selected>Select a car</option>
-                            </option>
                             <option value="Santa Monica - 2102 Lincoln Blvd">Santa Monica - 2102 Lincoln Blvd</option>
                             <option value="With Co-Ordinates - 5711 W Century Blvd">With Co-Ordinates - 5711 W Century
                                 Blvd</option>
@@ -99,6 +100,7 @@
                             </option>
                             <option value="Denver - 7800 E Tufts Ave">Denver - 7800 E Tufts Ave</option>
                         </select>
+
                     </div>
                 </div>
 
@@ -374,38 +376,38 @@
                 </form>
             </div>
             <div class="grow w-[350px] text-mainText flex flex-col gap-3">
-                <h3 class="text-[24px] font-bold">Customer Center</h3>
-                <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
-                    <img src="https://www.microsoft.com/en-us/dynamics-365/blog/wp-content/uploads/2016/07/249564_5F00_empower_2D00_customer_2D00_service_2D00_agents.jpg"
-                        alt="Customer Service Representative Mike Smith" width="78" height="78"
-                        class="w-[78px] h-[78px] border border-mainColor">
-                    <div class="text-mainText">
-                        <p class="text-[24px] font-bold">Mike Smith</p>
-                        <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
-                        <p><span class="text-mainColor">Email:</span> mike.smith@example.com</p>
+                <h2 class="text-[24px] font-bold">Customer Center</h3>
+                    <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
+                        <img src="https://www.microsoft.com/en-us/dynamics-365/blog/wp-content/uploads/2016/07/249564_5F00_empower_2D00_customer_2D00_service_2D00_agents.jpg"
+                            alt="Customer Service Representative Mike Smith" width="78" height="78"
+                            class="w-[78px] h-[78px] border border-mainColor">
+                        <div class="text-mainText">
+                            <p class="text-[24px] font-bold">Mike Smith</p>
+                            <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
+                            <p><span class="text-mainColor">Email:</span> mike.smith@example.com</p>
+                        </div>
                     </div>
-                </div>
-                <h3 class="text-[24px] font-bold">Change or Cancel Reservation</h3>
-                <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
-                    <img src="https://media.istockphoto.com/id/1371553731/photo/portrait-of-a-young-businessman-using-a-headset-in-a-modern-office.jpg?s=612x612&w=0&k=20&c=gfn9mVWijMJFNPRdzDNZExnvC6qBOkeeol9oJGpEfSM="
-                        alt="Support Representative" width="78" height="78"
-                        class="w-[78px] h-[78px] border border-mainColor">
-                    <div class="text-mainText">
-                        <p class="text-[24px] font-bold">Support Representative</p>
-                        <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
-                        <p><span class="text-mainColor">Email:</span> support@example.com</p>
-                    </div>
-                </div>
-                <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
-                    <img src="https://www.microsoft.com/en-us/dynamics-365/blog/wp-content/uploads/2016/07/249564_5F00_empower_2D00_customer_2D00_service_2D00_agents.jpg"
-                        alt="Customer Service Representative Jane Doe" width="78" height="78"
-                        class="w-[78px] h-[78px] border border-mainColor">
-                    <div class="text-mainText">
-                        <p class="text-[24px] font-bold">Jane Doe</p>
-                        <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
-                        <p><span class="text-mainColor">Email:</span> jane.doe@example.com</p>
-                    </div>
-                </div>
+                    <h2 class="text-[24px] font-bold">Change or Cancel Reservation</h3>
+                        <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
+                            <img src="https://media.istockphoto.com/id/1371553731/photo/portrait-of-a-young-businessman-using-a-headset-in-a-modern-office.jpg?s=612x612&w=0&k=20&c=gfn9mVWijMJFNPRdzDNZExnvC6qBOkeeol9oJGpEfSM="
+                                alt="Support Representative" width="78" height="78"
+                                class="w-[78px] h-[78px] border border-mainColor">
+                            <div class="text-mainText">
+                                <p class="text-[24px] font-bold">Support Representative</p>
+                                <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
+                                <p><span class="text-mainColor">Email:</span> support@example.com</p>
+                            </div>
+                        </div>
+                        <div class="bg-secondColor p-5 border-b-8 border-mainColor flex gap-3 grow items-center">
+                            <img src="https://www.microsoft.com/en-us/dynamics-365/blog/wp-content/uploads/2016/07/249564_5F00_empower_2D00_customer_2D00_service_2D00_agents.jpg"
+                                alt="Customer Service Representative Jane Doe" width="78" height="78"
+                                class="w-[78px] h-[78px] border border-mainColor">
+                            <div class="text-mainText">
+                                <p class="text-[24px] font-bold">Jane Doe</p>
+                                <p><span class="text-mainColor">Phone:</span> 666-999-888</p>
+                                <p><span class="text-mainColor">Email:</span> jane.doe@example.com</p>
+                            </div>
+                        </div>
             </div>
         </div>
     </section>
