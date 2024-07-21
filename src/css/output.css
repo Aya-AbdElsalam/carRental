@@ -659,6 +659,14 @@ video {
   inset: -0.25rem;
 }
 
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
+.right-3 {
+  right: 0.75rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -955,8 +963,12 @@ video {
   width: 350px;
 }
 
-.w-\[374px\] {
-  width: 374px;
+.w-\[400px\] {
+  width: 400px;
+}
+
+.w-\[450px\] {
+  width: 450px;
 }
 
 .w-\[455px\] {
@@ -1010,6 +1022,10 @@ video {
 
 .grow {
   flex-grow: 1;
+}
+
+.grow-\[5\] {
+  flex-grow: 5;
 }
 
 .table-auto {
@@ -2022,6 +2038,10 @@ video {
   background-color: rgb(0 0 0 / 0.35);
 }
 
+.bg-black\/50 {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
 .bg-mainColor {
   --tw-bg-opacity: 1;
   background-color: rgb(198 19 52 / var(--tw-bg-opacity));
@@ -2297,6 +2317,10 @@ video {
   font-size: 24px;
 }
 
+.text-\[29px\] {
+  font-size: 29px;
+}
+
 .text-\[30px\] {
   font-size: 30px;
 }
@@ -2307,10 +2331,6 @@ video {
 
 .text-\[36px\] {
   font-size: 36px;
-}
-
-.text-\[29px\] {
-  font-size: 29px;
 }
 
 .font-bold {
@@ -2815,6 +2835,7 @@ video {
 body {
   font-family: 'Lucida Sans';
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -2865,6 +2886,21 @@ body {
   .container {
     max-width: 1140px;
   }
+}
+
+#carRentalSelect::after {
+  border-color: #c61334 transparent transparent;
+}
+
+#carDetails,
+#ReservationForm {
+  scrollbar-color: #c61334 white !important;
+  scrollbar-width: thin;
+}
+
+a.active {
+  border: 2px solid #716d6e;
+  padding: 10px;
 }
 
 @media (min-width: 640px) {

@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "aos": "^2.3.4",
     "jquery": "^3.7.1"
@@ -16,4 +17,5 @@
   "author": "",
   "license": "ISC",
   "description": ""
+
 }

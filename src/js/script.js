@@ -1,3 +1,5 @@
+import { data } from "../data/module.mjs";
+
 $(document).ready(() => {
   // Initialize AOS
   AOS.init();
@@ -89,6 +91,8 @@ $(document).ready(() => {
   }
 
   function setEventListeners() {
+    $(window).on("scroll", activeNavLink);
+    $("nav ul li a").on("click", scrollToSection);
     $("#location").change((e) => (pickupLocation = e.target.value));
     $("#timedatePicker").change((e) => {
       pickupDate = new Date(e.target.value);
@@ -104,61 +108,103 @@ $(document).ready(() => {
 
     $(".emailForm").submit(handleEmailForm);
     $(".contactForm").submit(handleContactForm);
-  }
+    $(window).scroll(showBtnTop);
 
-  function handleReservationComplete(e) {
-    e.preventDefault();
-    $("#reservationFormCompalte").fadeOut();
-    $("#msg p").html(
-      "<h1>Success!!</h1> <p> We will connect with you as soon as possible </p>"
+    $("#scrollToTopBtn").click(scrollToTop);
+
+    function handleReservationComplete(e) {
+      e.preventDefault();
+      $("#reservationFormCompalte").fadeOut();
+      $("#msg p").html(
+        "<h1>Success!!</h1> <p> We will connect with you as soon as possible </p>"
+      );
+      $("#msg").fadeIn().css("display", "flex").delay(2000).fadeOut();
+      $("html").css("overflow-y", "auto");
+    }
+
+    function handleCancel(e) {
+      $("#reservationFormCompalte").fadeOut();
+      $("html").css("overflow-y", "auto");
+    }
+
+    function handleReservationForm(e) {
+      e.preventDefault();
+      updateReservationDetails();
+      $("#reservationFormCompalte").fadeIn();
+      $("html").css("overflow", "hidden");
+    }
+
+    function handleEmailForm(e) {
+      e.preventDefault();
+      $("#msg p").text("We will connect with you as soon as possible");
+      $("#msg").fadeIn().css("display", "flex").delay(2000).fadeOut();
+    }
+
+    function handleContactForm(e) {
+      e.preventDefault();
+      $("#msg p").html(
+        "<h1>Your message has been sent</h1> <p> We will connect with you as soon as possible </p>"
+      );
+      $("#msg").fadeIn().css("display", "flex").delay(2000).fadeOut();
+    }
+
+    function updateDropoffPicker() {
+      $("#timedatePickerdrop").datetimepicker({
+        step: 15,
+        value: new Date(pickupDate.getTime() + 8.64e7),
+        minDate: new Date(pickupDate.getTime() + 8.64e7),
+      });
+    }
+
+    function updateReservationDetails() {
+      $("#pickUpTime").text(pickupDate);
+      $("#dropOffTime").text(dropoffDate);
+      $("#pickUpLocation").text(pickupLocation);
+      $("#dropOffLocation").text(pickupLocation);
+      $("#carModel").text("CAR: " + chosenCar.model);
+      $("#imgModel").attr("src", chosenCar.image);
+    }
+    function showBtnTop() {
+      if ($(window).scrollTop() > 100) {
+        // Show button after scrolling down 100px
+        $("#scrollToTopBtn").fadeIn();
+      } else {
+        $("#scrollToTopBtn").fadeOut();
+      }
+    }
+    function scrollToTop() {
+      $("html, body").animate(
+        {
+          scrollTop: 0,
+        },
+        "slow"
+      );
+      return false;
+    }
+  }
+  function scrollToSection(event) {
+    event.preventDefault();
+    $("html, body").animate(
+      {
+        scrollTop: $($.attr(this, "href")).offset().top - 50, // Adjust the offset if needed
+      },
+      500
     );
-    $("#msg").fadeIn().css("display", "flex").delay(2000).fadeOut();
-    $("html").css("overflow-y", "auto");
   }
+  function activeNavLink() {
+    var currentScroll = $(this).scrollTop();
 
-  function handleCancel(e) {
-    $("#reservationFormCompalte").fadeOut();
-    $("html").css("overflow-y", "auto");
-  }
+    $("section").each(function () {
+      var sectionTop = $(this).offset().top - 60;
+      var sectionBottom = sectionTop + $(this).outerHeight();
 
-  function handleReservationForm(e) {
-    e.preventDefault();
-    updateReservationDetails();
-    $("#reservationFormCompalte").fadeIn();
-    $("html").css("overflow", "hidden");
-  }
-
-  function handleEmailForm(e) {
-    e.preventDefault();
-    $("#msg p").text("We will connect with you as soon as possible");
-    $("#msg").fadeIn().css("display", "flex").delay(2000).fadeOut();
-  }
-
-  function handleContactForm(e) {
-    e.preventDefault();
-    $("#msg p").html(
-      "<h1>Your message has been sent</h1> <p> We will connect with you as soon as possible </p>"
-    );
-    $("#msg").fadeIn().css("display", "flex").delay(2000).fadeOut();
-  }
-
-  function updateDropoffPicker() {
-    $("#timedatePickerdrop").datetimepicker({
-      step: 15,
-      value: new Date(pickupDate.getTime() + 8.64e7),
-      minDate: new Date(pickupDate.getTime() + 8.64e7),
+      if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
+        var id = $(this).attr("id");
+        $("nav ul li a").removeClass("active");
+        $('nav ul li a[href="#' + id + '" ]').addClass("active");
+      }
     });
   }
-
-  function updateReservationDetails() {
-    $("#pickUpTime").text(pickupDate);
-    $("#dropOffTime").text(dropoffDate);
-    $("#pickUpLocation").text(pickupLocation);
-    $("#dropOffLocation").text(pickupLocation);
-    $("#carModel").text("CAR: " + chosenCar.model);
-    $("#imgModel").attr("src", chosenCar.image);
-  }
-
   function chosenCarFun(carId) {
     chosenCar = cars.find((car) => car.id == carId);
     $("#carIMG").animate(
@@ -209,11 +255,15 @@ $(document).ready(() => {
   }
 
   function loadCarData() {
-    $.getJSON("https://freetestapi.com/api/v1/cars").done((res) => {
-      cars = res;
-      chosenCarFun(res[0].id);
-      populateCarOptions();
-    });
+    // $.getJSON("https://freetestapi.com/api/v1/cars").done((res) => {
+    //   cars = res;
+    //   console.log(res);
+    //   chosenCarFun(res[0].id);
+    //   populateCarOptions();
+    // });
+    cars = data();
+    chosenCarFun(cars[0].id);
+    populateCarOptions();
   }
 
   function initializeTitles() {

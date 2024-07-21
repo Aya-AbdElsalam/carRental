@@ -13,8 +13,9 @@
 body {
     font-family: 'Lucida Sans';
     overflow-x: hidden;
-
+    scroll-behavior: smooth;
 }
+
 
 .container {
     z-index: 1;
@@ -64,4 +65,19 @@ body {
     .container {
         max-width: 1140px;
     }
+}
+
+#carRentalSelect::after {
+    border-color: #c61334 transparent transparent;
+}
+
+#carDetails,
+#ReservationForm {
+    scrollbar-color: #c61334 white !important;
+    scrollbar-width: thin;
+}
+
+a.active {
+    border: 2px solid #716d6e;
+    padding: 10px;
 }
