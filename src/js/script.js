@@ -193,13 +193,12 @@ $(document).ready(() => {
   }
   function activeNavLink() {
     var currentScroll = $(this).scrollTop();
-
     $("section").each(function () {
       var sectionTop = $(this).offset().top - 60;
       var sectionBottom = sectionTop + $(this).outerHeight();
-
       if (currentScroll >= sectionTop && currentScroll < sectionBottom) {
         var id = $(this).attr("id");
+        console.log(id, $(this).attr("class"));
         $("nav ul li a").removeClass("active");
         $('nav ul li a[href="#' + id + '" ]').addClass("active");
       }
