@@ -44,8 +44,8 @@
     <!-- header -->
     <nav class="w-[100vw] bg-white z-50 top-0">
         <div class="py-5 flex justify-between container items-center">
-            <img src="http://carrental.themeinjection.com/theme/img/logo-red.gif" width="271" height="70"
-                alt="Car Rental Logo" class="max-[777px]:h-[34px] max-[777px]:w-[180px] logo">
+            <img src="https://i.ibb.co/k8jy7Gd/logo-red.webp" width="271" height="70" alt="Car Rental Logo"
+                class="max-[777px]:h-[34px] max-[777px]:w-[180px] logo">
             <ul
                 class="flex gap-5 text-[14px] text-mainText font-bold max-[777px]:hidden max-[777px]:absolute   max-[777px]:bg-black max-[777px]:text-white max-[777px]:top-[97px] max-[777px]:w-full max-[777px]:flex-col max-[777px]:left-0">
                 <li><a href="#Home"
@@ -68,6 +68,7 @@
         style="background: linear-gradient(to bottom, #303131 0%, #4d4f4f 50%, #303131 100%);">
         <div class="container flex gap-5 justify-stretch items-stretch flex-wrap">
             <form class="bg-white p-5 w-[400px] grow  flex flex-col gap-3 " id="reservationForm">
+                <label for="cars" class=" mb-2 text-mainText text-[20px] hidden">Choose a car:</label>
                 <select name="cars" id="cars" required
                     class="z-40 relative selectCar border-mainText border p-3 cursor-pointer text-[20px] w-full">
                     <option value="" disabled selected>Select a car</option>
@@ -169,7 +170,7 @@
                 </div>
             </form>
             <div class="overflow-hidden w-[450px] grow-[5] place-self-center" style="flex-grow: 5;">
-                <img src="" id="carIMG" alt="Selected Car Image " class="w-full " />
+                <img src="" id="carIMG" alt="Selected Car Image " width="100%" height="auto" class="w-full " />
             </div>
         </div>
     </section>
@@ -257,7 +258,7 @@
     </section>
     <!-- Reviews -->
     <section class="flex container justify-center items-center py-10 flex-col gap-4">
-        <img height="109px" class="h-[109px]"
+        <img height="109px" class="h-[109px]" width="auto" alt="star"
             src="./assets/five-golden-stars-client-excellent-evaluation-after-use-product-service-concept-by-3d-render.png" />
         <p id="review" class="text-mainText leading-[1.7] text-[24px]">This was my first time renting from car|rental.
 
@@ -451,7 +452,7 @@
                     </div>
                     <div class="w-[250px] grow">
                         <p class="text-mainColor text-[18px] font-semibold mb-5" id="carModel">Car: Toyota Camry</p>
-                        <img src="" height="200px" class="h-[200px]" id="imgModel" alt="Car model image">
+                        <img src="" height="200px" width="auto" class="h-[200px]" id="imgModel" alt="Car model image">
                     </div>
                 </div>
                 <hr>
